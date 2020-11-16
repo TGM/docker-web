@@ -20,6 +20,7 @@ services:
         container_name: php-fpm
         volumes:
             - ./application/:/var/www/
+        working_dir: /var/www
         networks:
             - web-network
         restart: unless-stopped
