@@ -36,13 +36,12 @@ services:
         entrypoint: /docker-entrypoint.sh
 
     mysql:
-        image: mysql:5.7
+        build: ./environment/mysql
         environment:
             MYSQL_DATABASE: 'db'
             MYSQL_USER: 'user'
             MYSQL_PASSWORD: 'password'
             MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
-        command: "--innodb_use_native_aio=0"
         volumes:
             - ./storage/db:/var/lib/mysql
         ports:

@@ -1,0 +1,7 @@
+[mysqld]
+innodb_use_native_aio=0
+
+innodb_page_size=64k
+innodb_log_buffer_size=32M
+innodb_buffer_pool_size=512M
+
