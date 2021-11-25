@@ -4,7 +4,6 @@ services:
     
     nginx:
         image: nginx:stable
-        container_name: nginx
         depends_on:
             - php-fpm
         volumes:
@@ -20,7 +19,6 @@ services:
 
     php-fpm:
         build: ./environment/php-fpm
-        container_name: php-fpm
         depends_on:
             - db
         volumes:
@@ -32,7 +30,6 @@ services:
 
     composer:
         image: composer
-        container_name: composer
         volumes:
             - ./application:/app
         command: "install"
@@ -40,7 +37,6 @@ services:
 
     db:
         image: mysql:5.7
-        container_name: db
         environment:
             MYSQL_DATABASE: 'db'
             MYSQL_USER: 'user'
