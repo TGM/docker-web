@@ -20,7 +20,7 @@ services:
     php-fpm:
         build: ./environment/php-fpm
         depends_on:
-            - db
+            - mysql
         volumes:
             - ./application:/var/www
         working_dir: /var/www
@@ -35,7 +35,7 @@ services:
         command: "install"
         entrypoint: /docker-entrypoint.sh
 
-    db:
+    mysql:
         image: mysql:5.7
         environment:
             MYSQL_DATABASE: 'db'
