@@ -28,13 +28,6 @@ services:
             - web-network
         restart: unless-stopped
 
-    composer:
-        image: composer
-        volumes:
-            - ./application:/app
-        command: "install"
-        entrypoint: /docker-entrypoint.sh
-
     mysql:
         build: ./environment/mysql
         environment:
